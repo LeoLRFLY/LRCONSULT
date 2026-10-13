@@ -3,54 +3,200 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>LR Consult | LRCONSULT LTDA</title>
-<meta name="description" content="LRCONSULT LTDA, CNPJ 66.420.827/0001-62. Consultoria, representação comercial e apoio ao transporte aéreo. Curitiba/PR.">
+<title>LR Consult | Consultoria em aviação executiva</title>
+<meta name="description" content="LR Consult: consultoria em aviação executiva, compra e venda de aeronaves, gestão de frota, homologação ANAC e suprimento de peças. Curitiba/PR.">
+<meta name="theme-color" content="#174278">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root{--bg:#f7f8fa;--card:#fff;--ink:#14213d;--muted:#5b6475;--line:#e3e6ec;--accent:#1f4e8c}
-  @media (prefers-color-scheme:dark){:root{--bg:#0f141c;--card:#171e29;--ink:#e8edf5;--muted:#9aa5b8;--line:#263142;--accent:#7fb0ff}}
+  :root{
+    --navy:#174278;--navy-deep:#0d2747;--sky:#5aa0e6;
+    --bg:#f6f8fb;--card:#ffffff;--ink:#132238;--muted:#5d6b80;--line:#e2e8f0;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{--bg:#0b1322;--card:#121d31;--ink:#e6edf7;--muted:#9aa9bf;--line:#22314a}
+  }
   *{box-sizing:border-box}
-  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-  main{max-width:760px;margin:0 auto;padding:48px 16px}
-  h1{font-size:2rem;margin:0 0 4px}
-  .legal{color:var(--muted);margin:0 0 32px}
-  section{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:24px;margin-bottom:20px}
-  h2{font-size:1.1rem;margin:0 0 12px;color:var(--accent)}
-  ul{margin:0;padding-left:20px}
-  dl{display:grid;grid-template-columns:max-content 1fr;gap:6px 16px;margin:0}
-  dt{color:var(--muted)}
-  dd{margin:0}
-  footer{color:var(--muted);font-size:.875rem;text-align:center;margin-top:32px}
-  a{color:var(--accent)}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+  a{color:inherit}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+
+  header.nav{position:absolute;inset:0 0 auto 0;z-index:2}
+  header.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .logo{font-weight:700;letter-spacing:.04em;color:#fff;text-decoration:none;font-size:1.1rem}
+  .logo span{color:var(--sky)}
+  .nav a.cta{color:#fff;text-decoration:none;font-weight:500;font-size:.95rem;border:1px solid rgba(255,255,255,.35);padding:8px 16px;border-radius:999px}
+  .nav a.cta:hover{background:rgba(255,255,255,.1)}
+
+  .hero{position:relative;color:#fff;padding:150px 0 110px;overflow:hidden;
+    background:radial-gradient(1200px 500px at 85% -10%,rgba(90,160,230,.35),transparent 60%),linear-gradient(160deg,var(--navy) 0%,var(--navy-deep) 100%)}
+  .hero svg.plane{position:absolute;right:-40px;bottom:-20px;width:520px;max-width:70%;opacity:.12}
+  .eyebrow{display:inline-block;font-size:.8rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--sky);margin-bottom:16px}
+  .hero h1{font-size:clamp(2rem,5vw,3.3rem);line-height:1.15;margin:0 0 20px;max-width:760px;font-weight:700}
+  .hero p{font-size:1.15rem;max-width:620px;color:rgba(255,255,255,.82);margin:0 0 32px}
+  .btns{display:flex;flex-wrap:wrap;gap:12px}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:10px;font-weight:600;text-decoration:none;transition:transform .15s}
+  .btn:hover{transform:translateY(-2px)}
+  .btn.primary{background:#fff;color:var(--navy)}
+  .btn.ghost{border:1px solid rgba(255,255,255,.4);color:#fff}
+
+  section{padding:88px 0}
+  .head{max-width:640px;margin-bottom:44px}
+  .head h2{font-size:clamp(1.6rem,3.5vw,2.2rem);margin:0 0 12px;line-height:1.25}
+  .head p{color:var(--muted);margin:0;font-size:1.05rem}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:28px;transition:box-shadow .2s,transform .2s}
+  .card:hover{box-shadow:0 12px 32px rgba(19,34,56,.08);transform:translateY(-3px)}
+  .icon{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:rgba(23,66,120,.1);color:var(--navy);margin-bottom:18px}
+  @media (prefers-color-scheme:dark){.icon{background:rgba(90,160,230,.15);color:var(--sky)}}
+  .card h3{margin:0 0 8px;font-size:1.1rem}
+  .card p{margin:0;color:var(--muted);font-size:.97rem}
+
+  .products{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .prod{display:flex;flex-direction:column;justify-content:space-between;border-radius:18px;padding:32px;text-decoration:none;color:#fff;min-height:240px;
+    background:linear-gradient(150deg,var(--navy),var(--navy-deep));transition:transform .2s,box-shadow .2s}
+  .prod.alt{background:linear-gradient(150deg,#1f5c9e,#123a66)}
+  .prod:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(13,39,71,.3)}
+  .prod .tag{font-size:.78rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--sky)}
+  .prod h3{font-size:1.5rem;margin:8px 0 10px}
+  .prod p{margin:0 0 20px;color:rgba(255,255,255,.8)}
+  .prod .go{font-weight:600}
+
+  .why{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:28px}
+  .why div{border-left:3px solid var(--navy);padding-left:16px}
+  @media (prefers-color-scheme:dark){.why div{border-color:var(--sky)}}
+  .why strong{display:block;margin-bottom:4px}
+  .why span{color:var(--muted);font-size:.95rem}
+
+  .contact{text-align:center}
+  .contact .btn.primary{background:var(--navy);color:#fff}
+
+  footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:.8rem}
+  footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
 </style>
 </head>
 <body>
-<main>
-  <h1>LR Consult</h1>
-  <p class="legal">LRCONSULT LTDA · CNPJ 66.420.827/0001-62</p>
 
-  <section>
-    <h2>O que fazemos</h2>
-    <p>Consultoria e representação comercial no setor aeronáutico, com apoio a operadores de aeronaves.</p>
-    <ul>
-      <li>Representação comercial de aeronaves, máquinas e equipamentos</li>
-      <li>Atividades auxiliares do transporte aéreo</li>
-      <li>Consultoria em gestão empresarial</li>
-      <li>Intermediação de serviços e apoio administrativo a empresas</li>
-    </ul>
-  </section>
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="#">LR<span>CONSULT</span></a>
+    <a class="cta" href="#contato">Fale conosco</a>
+  </div>
+</header>
 
-  <section>
-    <h2>Dados da empresa</h2>
-    <dl>
-      <dt>Razão social</dt><dd>LRCONSULT LTDA</dd>
-      <dt>CNPJ</dt><dd>66.420.827/0001-62</dd>
-      <dt>Endereço</dt><dd>R. Damasina Bittencourt Macedo, 112, Casa 03, Cond. Janaina<br>Santa Cândida, Curitiba/PR, CEP 82640-530</dd>
-      <dt>Telefone</dt><dd><a href="tel:+554199367060">(41) 9936-7060</a></dd>
-      <dt>E-mail</dt><dd><a href="mailto:leonardo@lrfly.com.br">leonardo@lrfly.com.br</a></dd>
-    </dl>
-  </section>
+<div class="hero">
+  <svg class="plane" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/></svg>
+  <div class="wrap">
+    <span class="eyebrow">Consultoria em aviação executiva</span>
+    <h1>Do primeiro voo à gestão completa da sua aeronave.</h1>
+    <p>Apoiamos proprietários, operadores e investidores na compra, venda, gestão e regularização de aeronaves, com transparência em cada etapa.</p>
+    <div class="btns">
+      <a class="btn primary" href="#servicos">Nossos serviços</a>
+      <a class="btn ghost" href="#produtos">Conheça nossas plataformas</a>
+    </div>
+  </div>
+</div>
 
-  <footer>© 2026 LRCONSULT LTDA · Curitiba/PR, Brasil</footer>
-</main>
+<section id="servicos">
+  <div class="wrap">
+    <div class="head">
+      <h2>O que fazemos</h2>
+      <p>Uma equipe com experiência prática em aviação executiva, cuidando do que é técnico, regulatório e comercial para você focar em voar.</p>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M12 3l9 9-9 9"/></svg></div>
+        <h3>Compra e venda de aeronaves</h3>
+        <p>Assessoria completa na aquisição ou venda, da busca no mercado à negociação, sempre buscando o melhor negócio com total transparência.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></div>
+        <h3>Consultoria e pré-compra</h3>
+        <p>Análise pré-compra, auditoria documental e técnica, apoio em importação e nacionalização de aeronaves.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M8 15h3"/></svg></div>
+        <h3>Gestão de aeronaves</h3>
+        <p>Controle de manutenção, vencimentos, diário de bordo digital, operação compartilhada e custos, tudo em uma plataforma.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3 4 6v6c0 5 3.4 8.3 8 9 4.6-.7 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <h3>Homologação ANAC</h3>
+        <p>Suporte na certificação de empresas de táxi aéreo e organizações de manutenção junto à ANAC.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 8 12 3 3 8v8l9 5 9-5z"/><path d="m3 8 9 5 9-5M12 13v8"/></svg></div>
+        <h3>Peças e componentes</h3>
+        <p>Cotação e entrega ágil de peças por meio de uma rede global de parceiros.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19V5M4 19h16M8 15l4-4 3 3 5-6"/></svg></div>
+        <h3>Gestão e apoio empresarial</h3>
+        <p>Representação comercial, intermediação de negócios e apoio administrativo para empresas do setor aéreo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="produtos" class="products">
+  <div class="wrap">
+    <div class="head">
+      <h2>Nossas plataformas</h2>
+      <p>Tecnologia própria para quem compra, vende e opera aeronaves.</p>
+    </div>
+    <div class="grid">
+      <a class="prod" href="https://lrfly.com.br" target="_blank" rel="noopener">
+        <div>
+          <span class="tag">Consultoria e gestão</span>
+          <h3>L&amp;R FLY</h3>
+          <p>Consultoria em aviação executiva e a plataforma MY ACFT para gestão de manutenção, operação e finanças da sua aeronave.</p>
+        </div>
+        <span class="go">Acessar lrfly.com.br →</span>
+      </a>
+      <a class="prod alt" href="https://www.mynextplane.app/" target="_blank" rel="noopener">
+        <div>
+          <span class="tag">Marketplace com IA</span>
+          <h3>My Next Plane</h3>
+          <p>Seleção curada de jatos executivos, com consultor de IA, comparativos de modelos e busca personalizada, inclusive fora do mercado.</p>
+        </div>
+        <span class="go">Acessar mynextplane.app →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="why">
+      <div><strong>Transparência</strong><span>Cada etapa documentada e explicada.</span></div>
+      <div><strong>Conformidade</strong><span>Processos alinhados às exigências da ANAC.</span></div>
+      <div><strong>Tecnologia</strong><span>Plataformas próprias para gestão e negócios.</span></div>
+      <div><strong>Rede global</strong><span>Parceiros para peças, serviços e aeronaves.</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="contato" class="contact">
+  <div class="wrap">
+    <div class="head" style="margin:0 auto 28px">
+      <h2>Vamos conversar sobre a sua aeronave?</h2>
+      <p>Fale com a nossa equipe por e-mail ou telefone.</p>
+    </div>
+    <div class="btns" style="justify-content:center">
+      <a class="btn primary" href="mailto:leonardo@lrfly.com.br">leonardo@lrfly.com.br</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 LRCONSULT LTDA · CNPJ 66.420.827/0001-62</span>
+    <span>R. Damasina Bittencourt Macedo, 112, Casa 03 · Santa Cândida · Curitiba/PR · CEP 82640-530 · (41) 9936-7060</span>
+  </div>
+</footer>
+
 </body>
 </html>
